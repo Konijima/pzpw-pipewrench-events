@@ -69,6 +69,7 @@ declare module 'PipeWrench-Events' {
     ClimateManager,
     Perk,
     ObjectTooltip,
+    java,
   } from 'PipeWrench';
   type KahluaTable = se.krka.kahlua.vm.KahluaTable;
   /**
@@ -87,7 +88,7 @@ declare module 'PipeWrench-Events' {
       /** @param listener The listener to unregister. */
       removeListener(listener: L): void;
       /** @param params Any parameter to pass. */
-      trigger(...params): void;
+      trigger(...params: any[]): void;
   }
   export const acceptedFactionInvite: EventEmitter<AcceptedFactionInviteListener>;
   export const acceptedSafehouseInvite: EventEmitter<AcceptedSafehouseInviteListener>;
@@ -725,7 +726,7 @@ declare module 'PipeWrench-Events' {
    * @param rowID The row identifier of the table result.
    * @param tableName The name of the table result.
    */
-  export type OnGetTableResultListener = (result: ArrayList<any>, rowID: number, tableName: string) => void;
+  export type OnGetTableResultListener = (result: java.util.ArrayList<any>, rowID: number, tableName: string) => void;
   /**
    * Triggered when a grid square is burning.
    *
@@ -1102,7 +1103,7 @@ declare module 'PipeWrench-Events' {
    * @param sessionID The session identifier for the transaction.
    * @param custom TODO
    */
-  export type OnReceiveItemListNetListener = (sender: IsoPlayer, itemList: ArrayList<any>, receiver: IsoPlayer, sessionID: string, custom: string) => void;
+  export type OnReceiveItemListNetListener = (sender: IsoPlayer, itemList: java.util.ArrayList<any>, receiver: IsoPlayer, sessionID: string, custom: string) => void;
   /**
    * Triggered when the game client is receiving user log from the server.
    *
@@ -1165,7 +1166,7 @@ declare module 'PipeWrench-Events' {
    * @param displayName The list of display names for the players which are being updated on the score board.
    * @param steamIDs The list of Steam identifiers of the players which are being updated on the score board.
    */
-  export type OnScoreboardUpdateListener = (playerNames: ArrayList<string>, displayNames: ArrayList<string>, steamIDs: ArrayList<string>) => void;
+  export type OnScoreboardUpdateListener = (playerNames: java.util.ArrayList<string>, displayNames: java.util.ArrayList<string>, steamIDs: java.util.ArrayList<string>) => void;
   /**
    * Triggered for each room about to get spawned, the first time a character gets close enough to the building where the room is located.
    *
@@ -1196,7 +1197,7 @@ declare module 'PipeWrench-Events' {
    * Triggered when the game client receives statistics from the server.
    */
   export type OnServerStatisticReceivedListener = () => void;
-  export type OnServerWorkshopItemsListener = (state: string, data: ArrayList<any | number | string>, data2: number | string, data3: number) => void;
+  export type OnServerWorkshopItemsListener = (state: string, data: java.util.ArrayList<any | number | string>, data2: number | string, data3: number) => void;
   /**
    * Triggered when the default chat tab has been set.
    *
