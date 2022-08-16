@@ -1,14 +1,14 @@
 {
-  "name": "pipewrench-events",
+  "name": "pzpw-pipewrench-events",
   "version": "1.0.0",
   "description": "",
   "types": "PipeWrench-Events.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asledgehammer/PipeWrench-Events.git"
+    "url": "git+https://github.com/Konijima/pzpw-pipewrench-events.git"
   },
   "keywords": [
     "pipewrench",
@@ -25,7 +25,12 @@
   "author": "asledgehammer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/asledgehammer/PipeWrench-Events/issues"
+    "url": "https://github.com/Konijima/pzpw-pipewrench-events/issues"
   },
-  "homepage": "https://github.com/asledgehammer/PipeWrench-Events#readme"
+  "homepage": "https://github.com/Konijima/pzpw-pipewrench-events#readme",
+  "dependencies": {
+    "PipeWrench": "github:Konijima/pzpw-pipewrench",
+    "lua-types": "^2.12.0",
+    "typescript": "^4.7.4"
+  }
 }
